@@ -1,0 +1,139 @@
+! name: FOSS Docs
+! description: Boost official documentation, Arch Wiki, man pages, and FOSS project sites; downrank generic listicles and SEO content farms.
+! public: true
+! author: Xariann
+! homepage: https://github.com/Xarianne/Goggles
+! issues: https://github.com/Xarianne/Goggles/issues
+! avatar: #2E8B57
+! license: CC0-1.0
+
+! ------------------------------------------------------------------
+! FOSS Docs — a Brave Search Goggle
+! ------------------------------------------------------------------
+! Goal: when searching Linux / FOSS topics, surface authoritative
+! primary sources (official docs, man pages, distro wikis, upstream
+! project sites) and push down generic "Top 10" listicles, SEO farms
+! and AI-generated content mills.
+!
+! Tuning flow: search a FOSS query in Brave with this goggle active,
+! read the per-result "why is this ranked this way" explanation Brave
+! shows, then add a rule here and re-submit the goggle URL at
+! https://search.brave.com/goggles/create. Rinse, repeat.
+! ------------------------------------------------------------------
+
+! =====================
+! Boost: distributions
+! =====================
+$boost,site=archlinux.org
+$boost,site=wiki.archlinux.org
+$boost,site=debian.org
+$boost,site=wiki.debian.org
+$boost,site=fedoraproject.org
+$boost,site=docs.fedoraproject.org
+$boost,site=opensuse.org
+$boost,site=en.opensuse.org
+$boost,site=gentoo.org
+$boost,site=wiki.gentoo.org
+$boost,site=alpinelinux.org
+$boost,site=wiki.alpinelinux.org
+$boost,site=nixos.org
+$boost,site=wiki.nixos.org
+$boost,site=ubuntu.com
+$boost,site=help.ubuntu.com
+$boost,site=wiki.ubuntu.com
+
+! =====================
+! Boost: documentation hubs
+! =====================
+$boost,site=man7.org
+$boost,site=linux.die.net
+$boost,site=tldp.org
+$boost,site=kernel.org
+$boost,site=www.kernel.org
+$boost,site=docs.kernel.org
+$boost,site=freedesktop.org
+$boost,site=www.freedesktop.org
+$boost,site=systemd.io
+$boost,site=www.fsf.org
+$boost,site=gnu.org
+$boost,site=www.gnu.org
+
+! =====================
+! Boost: upstream projects
+! =====================
+$boost,site=gitlab.gnome.org
+$boost,site=wiki.gnome.org
+$boost,site=kde.org
+$boost,site=docs.kde.org
+$boost,site=invent.kde.org
+$boost,site=nginx.org
+$boost,site=docs.nginx.com
+$boost,site=httpd.apache.org
+$boost,site=postgresql.org
+$boost,site=www.postgresql.org
+$boost,site=docs.postgresql.org
+$boost,site=mariadb.org
+$boost,site=dev.mysql.com
+$boost,site=redis.io
+$boost,site=www.redmine.org
+$boost,site=docs.ansible.com
+$boost,site=www.vim.org
+$boost,site=neovim.io
+$boost,site=www.gnu.org/software/emacs
+
+! =====================
+! Boost: language docs
+! =====================
+$boost,site=docs.python.org
+$boost,site=docs.rs
+$boost,site=doc.rust-lang.org
+$boost,site=go.dev
+$boost,site=www.php.net
+$boost,site=devdocs.io
+
+! =====================
+! Boost: package managers / repos
+! =====================
+$boost,site=archlinux.org/packages
+$boost,site=packages.debian.org
+$boost,site=packages.ubuntu.com
+$boost,site=fedora.pkgs.org
+$boost,site=repology.org
+$boost,site=pypi.org
+$boost,site=crates.io
+$boost,site=pkg.go.dev
+$boost,site=npmjs.com
+$boost,site=flathub.org
+
+! =====================
+! Downrank: listicles / SEO farms
+! =====================
+$downrank=3,site=howtogeek.com
+$downrank=3,site=makeuseof.com
+$downrank=3,site=lifewire.com
+$downrank=3,site=techtimes.com
+$downrank=3,site=techwalla.com
+$downrank=2,site=medium.com
+$downrank=2,site=dev.to
+$downrank=2,site=geeksforgeeks.org
+$downrank=2,site=tutorialspoint.com
+$downrank=2,site=digitalocean.com/community/tutorials
+$downrank=2,site=java67.com
+$downrank=2,site=linuxconfig.org
+$downrank=2,site=ostechnix.com
+$downrank=2,site=itsfoss.com
+$downrank=2,site=linuxhandbook.com
+$downrank=2,site=fosslinux.com
+$downrank=2,site=linuxopsys.com
+
+! =====================
+! Discard: AI content mills
+! =====================
+$discard,site=copyprogramming.com
+$discard,site=faqcode.com
+$discard,site=coderecipe.org
+$discard,site=codegrepr.com
+$discard,site=intellipaat.com
+$discard,site=simplidh.com
+$discard,site=programbuzz.com
+$discard,site=ecanlitvizle.com

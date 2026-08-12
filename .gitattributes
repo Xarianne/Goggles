@@ -1,0 +1,3 @@
+# Goggle files (Brave reads the raw text, editor noise must not leak in)
+*.goggle       -diff
+**/goggle.txt  -diff
