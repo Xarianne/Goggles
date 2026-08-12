@@ -79,7 +79,7 @@ $boost,site=www.redmine.org
 $boost,site=docs.ansible.com
 $boost,site=www.vim.org
 $boost,site=neovim.io
-$boost,site=www.gnu.org/software/emacs
+/software/emacs$boost,site=www.gnu.org
 
 ! =====================
 ! Boost: language docs
@@ -94,7 +94,7 @@ $boost,site=devdocs.io
 ! =====================
 ! Boost: package managers / repos
 ! =====================
-$boost,site=archlinux.org/packages
+/packages$boost,site=archlinux.org
 $boost,site=packages.debian.org
 $boost,site=packages.ubuntu.com
 $boost,site=fedora.pkgs.org
@@ -117,7 +117,7 @@ $downrank=2,site=medium.com
 $downrank=2,site=dev.to
 $downrank=2,site=geeksforgeeks.org
 $downrank=2,site=tutorialspoint.com
-$downrank=2,site=digitalocean.com/community/tutorials
+/community/tutorials$downrank=2,site=digitalocean.com
 $downrank=2,site=java67.com
 $downrank=2,site=linuxconfig.org
 $downrank=2,site=ostechnix.com
