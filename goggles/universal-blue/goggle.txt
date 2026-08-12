@@ -53,8 +53,8 @@ $boost=3,site=projectucore.io
 ! =====================
 ! GitHub: source, issues, discussions
 ! =====================
-$boost=2,site=github.com/ublue-os
-$boost=2,site=github.com/projectbluefin
+/ublue-os$boost=2,site=github.com
+/projectbluefin$boost=2,site=github.com
 
 ! =====================
 ! YouTube: Universal Blue's channel (Jorge Castro)
@@ -66,5 +66,5 @@ $boost=2,site=github.com/projectbluefin
 ! boosted by these rules — only the channel URL itself is. See
 ! README.md for the workaround.
 ! =====================
-$boost=2,site=www.youtube.com/c/JorgeCastro
-$boost=2,site=www.youtube.com/@JorgeCastro
+/c/JorgeCastro$boost=2,site=youtube.com
+/@JorgeCastro$boost=2,site=youtube.com
