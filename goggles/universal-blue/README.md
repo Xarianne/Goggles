@@ -6,7 +6,7 @@ A Brave Search Goggle that boosts the blogs, docs, forums and project sites of [
 
 When you search something like `bluefin rebase to aurora`, `bazzite game mode`, `rpm-ostree rollback`, or `ublue akmods`, Brave's default ranking mixes official UB content with generic Linux blog coverage of varying depth. This goggle:
 
-- **Boosts** the umbrella site and Discourse forums (`universal-blue.org`, `universal-blue.discourse.group`), each distro's site and docs (`projectbluefin.io`, `getaurora.dev`, `docs.getaurora.dev`, `bazzite.gg`, `projectucore.io`), the Bluefin factory dashboard, and the two GitHub orgs (`github.com/ublue-os`, `github.com/projectbluefin`).
+- **Boosts** the umbrella site and Discourse forums (`universal-blue.org`, `universal-blue.discourse.group`), each distro's site and docs (`projectbluefin.io`, `getaurora.dev`, `docs.getaurora.dev`, `bazzite.gg`, `projectucore.io`), the Bluefin factory dashboard, and the two GitHub orgs (`ublue-os`, `projectbluefin`).
 - Leaves unmatched results alone — this is a **boost-only** goggle, not a restrict. Generic coverage still appears, just below the official sources.
 
 ## Sources used to build this goggle
@@ -45,7 +45,7 @@ Goggles need iteration. Process:
 
 ### Things to watch for
 
-- **Boost strength:** the umbrella sites get `$boost=3`, GitHub orgs and the factory dashboard get `$boost=2`. If GitHub issue threads are drowning out the actual blog posts, drop the GitHub rule to `$boost=1` or add `/discussions/$boost=3,site=github.com/ublue-os` to favor discussions over issues.
+- **Boost strength:** the umbrella sites get `$boost=3`, GitHub orgs and the factory dashboard get `$boost=2`. If GitHub issue threads are drowning out the actual blog posts, drop the GitHub rule to `$boost=1` or add `/discussions$boost=3,site=github.com` to favor discussions over issues.
 - **Subdomain matches:** `$site=projectbluefin.io` also matches `docs.projectbluefin.io` and `factory.projectbluefin.io`. They have separate rules only because they deserve different strengths (docs = 3, factory = 2).
 - **Adding a "strict mode":** if you want this goggle to *only* show UB sites and hide everything else, add a generic `$discard` as the first instruction after the header, so unmatched results get removed:
 
