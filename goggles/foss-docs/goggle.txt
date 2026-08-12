@@ -1,5 +1,5 @@
 ! name: FOSS Docs
-! description: Boost official documentation, Arch Wiki, man pages, and FOSS project sites; downrank generic listicles and SEO content farms.
+! description: Show only authoritative documentation, distro wikis, man pages, upstream project sites, and package registries for Linux and FOSS queries.
 ! public: true
 ! author: Xariann
 ! homepage: https://github.com/Xarianne/Goggles
@@ -7,23 +7,7 @@
 ! avatar: #2E8B57
 ! license: CC0-1.0
 
-! ------------------------------------------------------------------
-! FOSS Docs — a Brave Search Goggle
-! ------------------------------------------------------------------
-! Goal: when searching Linux / FOSS topics, surface authoritative
-! primary sources (official docs, man pages, distro wikis, upstream
-! project sites) and push down generic "Top 10" listicles, SEO farms
-! and AI-generated content mills.
-!
-! Tuning flow: search a FOSS query in Brave with this goggle active,
-! read the per-result "why is this ranked this way" explanation Brave
-! shows, then add a rule here and re-submit the goggle URL at
-! https://search.brave.com/goggles/create. Rinse, repeat.
-! ------------------------------------------------------------------
-
-! =====================
-! Boost: distributions
-! =====================
+$discard
 $boost,site=archlinux.org
 $boost,site=wiki.archlinux.org
 $boost,site=debian.org
@@ -41,10 +25,6 @@ $boost,site=wiki.nixos.org
 $boost,site=ubuntu.com
 $boost,site=help.ubuntu.com
 $boost,site=wiki.ubuntu.com
-
-! =====================
-! Boost: documentation hubs
-! =====================
 $boost,site=man7.org
 $boost,site=linux.die.net
 $boost,site=tldp.org
@@ -57,10 +37,6 @@ $boost,site=systemd.io
 $boost,site=www.fsf.org
 $boost,site=gnu.org
 $boost,site=www.gnu.org
-
-! =====================
-! Boost: upstream projects
-! =====================
 $boost,site=gitlab.gnome.org
 $boost,site=wiki.gnome.org
 $boost,site=kde.org
@@ -80,20 +56,12 @@ $boost,site=docs.ansible.com
 $boost,site=www.vim.org
 $boost,site=neovim.io
 /software/emacs^$boost,site=www.gnu.org
-
-! =====================
-! Boost: language docs
-! =====================
 $boost,site=docs.python.org
 $boost,site=docs.rs
 $boost,site=doc.rust-lang.org
 $boost,site=go.dev
 $boost,site=www.php.net
 $boost,site=devdocs.io
-
-! =====================
-! Boost: package managers / repos
-! =====================
 /packages^$boost,site=archlinux.org
 $boost,site=packages.debian.org
 $boost,site=packages.ubuntu.com
@@ -104,36 +72,3 @@ $boost,site=crates.io
 $boost,site=pkg.go.dev
 $boost,site=npmjs.com
 $boost,site=flathub.org
-
-! =====================
-! Downrank: listicles / SEO farms
-! =====================
-$downrank=3,site=howtogeek.com
-$downrank=3,site=makeuseof.com
-$downrank=3,site=lifewire.com
-$downrank=3,site=techtimes.com
-$downrank=3,site=techwalla.com
-$downrank=2,site=medium.com
-$downrank=2,site=dev.to
-$downrank=2,site=geeksforgeeks.org
-$downrank=2,site=tutorialspoint.com
-/community/tutorials^$downrank=2,site=digitalocean.com
-$downrank=2,site=java67.com
-$downrank=2,site=linuxconfig.org
-$downrank=2,site=ostechnix.com
-$downrank=2,site=itsfoss.com
-$downrank=2,site=linuxhandbook.com
-$downrank=2,site=fosslinux.com
-$downrank=2,site=linuxopsys.com
-
-! =====================
-! Discard: AI content mills
-! =====================
-$discard,site=copyprogramming.com
-$discard,site=faqcode.com
-$discard,site=coderecipe.org
-$discard,site=codegrepr.com
-$discard,site=intellipaat.com
-$discard,site=simplidh.com
-$discard,site=programbuzz.com
-$discard,site=ecanlitvizle.com

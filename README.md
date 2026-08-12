@@ -6,8 +6,8 @@ A small collection of [Brave Search Goggles](https://search.brave.com/goggles) â
 
 | Goggle | What it does | Raw URL |
 | --- | --- | --- |
-| [foss-docs](./goggles/foss-docs/goggle.txt) | Boosts official documentation, Arch Wiki, man pages and FOSS project sites; downranks generic listicles and SEO farms. | `https://raw.githubusercontent.com/Xarianne/Goggles/main/goggles/foss-docs/goggle.txt` |
-| [universal-blue](./goggles/universal-blue/goggle.txt) | Boosts the blogs, docs, forums and project sites of Universal Blue distributions (Bluefin, Aurora, Bazzite, uCore) and the umbrella project. | `https://raw.githubusercontent.com/Xarianne/Goggles/main/goggles/universal-blue/goggle.txt` |
+| [foss-docs](./goggles/foss-docs/goggle.txt) | Shows only authoritative documentation, distro wikis, man pages, upstream project sites, and package registries for Linux and FOSS queries. | `https://raw.githubusercontent.com/Xarianne/Goggles/main/goggles/foss-docs/goggle.txt` |
+| [universal-blue](./goggles/universal-blue/goggle.txt) | Shows only results from Universal Blue and its distributions (Bluefin, Aurora, Bazzite, uCore), plus their GitHub organizations. | `https://raw.githubusercontent.com/Xarianne/Goggles/main/goggles/universal-blue/goggle.txt` |
 
 Once you have pushed a goggle to GitHub, copy its **Raw** URL (the `raw.githubusercontent.com/...` one, not the `github.com/.../blob/...` one) and submit it at <https://search.brave.com/goggles/create>. Brave fetches, validates and caches the file; you'll get feedback there if anything is malformed.
 

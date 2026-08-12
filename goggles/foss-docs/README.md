@@ -1,14 +1,19 @@
 # foss-docs
 
-A Brave Search Goggle that re-ranks Linux / FOSS queries toward authoritative primary sources.
+A Brave Search Goggle that shows only authoritative documentation, distro wikis, man pages, upstream project sites, and package registries for Linux and FOSS queries.
 
 ## Intent
 
 When you search something like `systemd timer vs cron` or `btrfs scrub`, Brave's default ranking surfaces a mix of official docs and SEO-optimised listicles. This goggle:
 
-- **Boosts** official documentation, distro wikis (Arch, Debian, Fedora, Gentoo, NixOS, openSUSE, Alpine, Ubuntu), man pages (man7.org, linux.die.net), the Linux kernel docs, the TLDP, upstream project sites (GNOME, KDE, systemd.io, nginx, PostgreSQL, Redis, Ansible, Vim/Neovim/Emacs), language docs (Python, Rust, Go, PHP), and package registries (Arch packages, Debian/Ubuntu packages, Repology, PyPI, crates.io, pkg.go.dev, npm, Flathub).
-- **Downranks** listicle / SEO farms (HowToGeek, MakeUseOf, Lifewire, GeeksforGeeks, TutorialsPoint, Medium, dev.to, LinuxConfig, It's FOSS, etc.) — these aren't removed, just pushed down so primary sources win.
-- **Discards** AI-generated content mills that copy Stack Overflow / GitHub content (copyprogramming.com, faqcode.com, coderecipe.org, etc.).
+- **Restricts** results to official documentation, distro wikis (Arch, Debian, Fedora, Gentoo, NixOS, openSUSE, Alpine, Ubuntu), man pages (man7.org, linux.die.net), the Linux kernel docs, the TLDP, upstream project sites (GNOME, KDE, systemd.io, nginx, PostgreSQL, Redis, Ansible, Vim/Neovim/Emacs), language docs (Python, Rust, Go, PHP), and package registries (Arch packages, Debian/Ubuntu packages, Repology, PyPI, crates.io, pkg.go.dev, npm, Flathub).
+- **Hides** everything else. It is not a boost goggle.
+
+## Sources used to build this goggle
+
+- Each distribution's official documentation domain.
+- Each upstream project's official docs or source repository site.
+- Common package registry and documentation hub domains.
 
 ## Tuning notes
 
@@ -23,15 +28,8 @@ Goggles need iteration. Process:
 ### Things to watch for
 
 - **Over-boosting**: too many `$boost,site=...` rules with equal strength can wash each other out. Use `$boost=2` or `$boost=3` to give canonical sources (kernel.org, man7.org, wiki.archlinux.org) priority over the rest.
-- **Downrank vs discard**: prefer `$downrank` over `$discard` for sites that occasionally have good content (Medium, dev.to). Reserve `$discard` for pure content farms.
-- **Subdomain matches**: `$site=archlinux.org` also matches `wiki.archlinux.org` and `archlinux.org/packages`. You don't need a separate rule unless you want a different strength.
-- **Conflict precedence**: `discard > boost > downrank`. A `$discard` on a more specific path wins over a `$boost` on the site.
-
-## Sources for the boost/discard lists
-
-- Distributions and upstream projects: from each project's official documentation domain.
-- Content-farm discard list: adapted from community blocklists (e.g. the "Copycats removal" goggle in `brave/goggles-quickstart`) plus manual additions.
-- Listicle downrank list: based on queries like `linux btrfs snapshot`, `nginx reverse proxy`, `iptables vs nftables` and observing which non-authoritative sites rank high.
+- **Subdomain matches**: `$site=archlinux.org` also matches `wiki.archlinux.org` and `archlinux.org/packages`.
+- **Missing results**: this goggle discards anything not matching a rule. If a useful source is being removed, add it here.
 
 ## Raw URL
 
