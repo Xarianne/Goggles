@@ -1,5 +1,5 @@
 ! name: Universal Blue
-! description: Boost the blogs, docs, forums, and project sites of Universal Blue distributions (Bluefin, Aurora, Bazzite, uCore) and the umbrella project.
+! description: Show only results from Universal Blue and its distributions (Bluefin, Aurora, Bazzite, uCore), plus their GitHub organizations.
 ! public: true
 ! author: Xariann
 ! homepage: https://github.com/Xarianne/Goggles
@@ -7,64 +7,15 @@
 ! avatar: #1E90FF
 ! license: CC0-1.0
 
-! ------------------------------------------------------------------
-! Universal Blue — a Brave Search Goggle
-! ------------------------------------------------------------------
-! Goal: when searching topics related to Universal Blue images
-! (Bluefin, Aurora, Bazzite, uCore) and atomic/cloud-native Fedora
-! desktops, surface the official distro blogs, docs, forums and
-! project repos instead of generic Linux listicle coverage.
-!
-! This is a BOOST goggle: matched sites are raised in the ranking,
-! but non-matched results still appear (unmatched results are not
-! discarded). If you want a strict "only UB sites" mode, see the
-! README.md in this folder for how to add a generic $discard rule.
-! ------------------------------------------------------------------
-
-! =====================
-! Umbrella: Universal Blue
-! =====================
+$discard
 $boost=3,site=universal-blue.org
 $boost=3,site=universal-blue.discourse.group
-
-! =====================
-! Bluefin (incl. Dakota, LTS, Server)
-! =====================
 $boost=3,site=projectbluefin.io
 $boost=3,site=docs.projectbluefin.io
 $boost=2,site=factory.projectbluefin.io
-
-! =====================
-! Aurora
-! =====================
 $boost=3,site=getaurora.dev
 $boost=3,site=docs.getaurora.dev
-
-! =====================
-! Bazzite
-! =====================
 $boost=3,site=bazzite.gg
-
-! =====================
-! uCore
-! =====================
 $boost=3,site=projectucore.io
-
-! =====================
-! GitHub: source, issues, discussions
-! =====================
-/ublue-os$boost=2,site=github.com
-/projectbluefin$boost=2,site=github.com
-
-! =====================
-! YouTube: Universal Blue's channel (Jorge Castro)
-! ------------------------------------------------------------------
-! Limitation: Goggles match on URL substrings. YouTube video URLs
-! are youtube.com/watch?v=XXXX and do not contain the channel name,
-! so we can only boost the channel *page*, not every video from it.
-! When a JorgeCastro video shows up in results it will NOT be
-! boosted by these rules — only the channel URL itself is. See
-! README.md for the workaround.
-! =====================
-/c/JorgeCastro$boost=2,site=youtube.com
-/@JorgeCastro$boost=2,site=youtube.com
+/ublue-os^$boost=2,site=github.com
+/projectbluefin^$boost=2,site=github.com
